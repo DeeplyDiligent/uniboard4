@@ -1,0 +1,79 @@
+<svg class="ldt-blank" width="280px"  height="100px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" style="background: none;"><style type="text/css">path,ellipse,circle,rect,polygon,polyline,line { stroke-width: 0; }
+@keyframes ld-hit-px {
+  0% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    -webkit-transform: scale(0) translate(0, 0) skewX(0);
+    transform: scale(0) translate(0, 0) skewX(0);
+  }
+  20% {
+    -webkit-transform: scale(1) translate(0, 0) skewX(20deg);
+    transform: scale(1) translate(0, 0) skewX(20deg);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(1, 0, 1, 0.5);
+    -webkit-transform: scale(1) translate(0, 0) skewX(20deg);
+    transform: scale(1) translate(0, 0) skewX(20deg);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 150px) skewX(20deg);
+    transform: scale(1) translate(0, 150px) skewX(20deg);
+  }
+}
+@-webkit-keyframes ld-hit-px {
+  0% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    -webkit-transform: scale(0) translate(0, 0) skewX(0);
+    transform: scale(0) translate(0, 0) skewX(0);
+  }
+  20% {
+    -webkit-transform: scale(1) translate(0, 0) skewX(20deg);
+    transform: scale(1) translate(0, 0) skewX(20deg);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(1, 0, 1, 0.5);
+    -webkit-transform: scale(1) translate(0, 0) skewX(20deg);
+    transform: scale(1) translate(0, 0) skewX(20deg);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 150px) skewX(20deg);
+    transform: scale(1) translate(0, 150px) skewX(20deg);
+  }
+}
+.ld.ld-hit-px {
+  -webkit-animation: ld-hit-px 2s infinite;
+  animation: ld-hit-px 2s infinite;
+}
+
+text { font-family: Courier New }</style><g transform="translate(24.8125 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: 0s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#5e4eff" style="font-family:Courier New">U</text>
+  </g>
+</g><g transform="translate(53.609375 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.05125s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#7309ff" style="font-family:Courier New">n</text>
+  </g>
+</g><g transform="translate(82.40625 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.1025s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#a100d0" style="font-family:Courier New">i</text>
+  </g>
+</g><g transform="translate(111.203125 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.15375s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#8500dd" style="font-family:Courier New">B</text>
+  </g>
+</g><g transform="translate(140 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.205s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#4800b9" style="font-family:Courier New">o</text>
+  </g>
+</g><g transform="translate(168.796875 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.25625s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#5e4eff" style="font-family:Courier New">a</text>
+  </g>
+</g><g transform="translate(197.59375 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.3075s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#7309ff" style="font-family:Courier New">r</text>
+  </g>
+</g><g transform="translate(226.390625 66.265625)" style="opacity: 1;">
+  <g style="animation-delay: -0.35875s; animation-duration: 1.6s; font-size: 48px; animation-direction: reverse; transform-origin: 14.3984px 0px;" class="ld ld-hit-px">
+    <text fill="#a100d0" style="font-family:Courier New">d</text>
+  </g>
+</g></svg>
