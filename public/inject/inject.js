@@ -66,9 +66,12 @@ $(document).ready(function(){
         storedState = window.localStorage.getItem("uniboard-shown-by-default")
         if(storedState==="false") fastHide();
     }
+    function storeSesskey(callback){
+        chrome.storage.local.set({'sessKeyForUniboard': (new URL($('[data-title="logout,moodle"]').attr('href'))).search.split('=')[1]},callback);
+    }
     prepareHeaderBar();
-    startIframe();
     prepareMinimizeButton();
     showUniboardBasedOnSavedState();
     $('#uniboard-max-button,#uniboard-minimize').click(bindMinimizeListeners);
+    storeSesskey(startIframe);
 });

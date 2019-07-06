@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import database from "./data/main";
 import "./css/app.css";
 import FirstLoad from "./pages/firstLoad/firstLoad";
+import Loader from "./components/reused/loader";
+import MainApp from "./pages/app/mainApp";
 
 class App extends Component {
   state = { loading: true, data: null };
@@ -15,13 +17,13 @@ class App extends Component {
     if (this.state.loading) {
       return (
         <div className="center-on-page">
-          <i className="fas fa-circle-notch fa-spin text-5xl" />
+          <Loader />
         </div>
       );
     } else if (!this.state.data) {
       return <FirstLoad />
     } else {
-      return <div>App</div>;
+      return <MainApp />;
     }
     
   }

@@ -1,8 +1,58 @@
 import React, { Component } from "react";
+import Step1SubjectSelect from "./step1SubjectSelect";
+import Step2LoadSubjectContent from "./step2LoadSubjectContent";
+import Loader from "../../components/reused/loader";
+import database from "../../data/main";
 /*global chrome*/
 
 class FirstLoad extends Component {
-  state = {};
+  state = { selectedSubjects: [], step: 1, cloudSync: false };
+  setSelectedSubjects = selectedSubjects => {
+    this.setState({ selectedSubjects: selectedSubjects });
+  };
+  setCloudSync = cloudSync => {
+    this.setState({ cloudSync: cloudSync });
+  };
+  nextStep = () => {
+    this.setState({ step: this.state.step + 1 });
+  };
+  commitSubjectsAndCloudSync = () => {
+    database.commitSubjectNamesAndCloudSync(
+      this.state.selectedSubjects,
+      this.state.cloudSync
+    );
+  };
+  render() {
+    if (this.state.step === 1) {
+      return (
+        <Popup>
+          <Step1SubjectSelect
+            setSelectedSubjects={this.setSelectedSubjects}
+            nextStep={this.nextStep}
+          />
+        </Popup>
+      );
+    } else if (this.state.step === 2) {
+      return (
+        <Popup>
+          <Step2LoadSubjectContent
+            nextStep={this.nextStep}
+            setCloudSync={this.setCloudSync}
+          />
+        </Popup>
+      );
+    } else if (this.state.step === 3) {
+      this.commitSubjectsAndCloudSync();
+      return (
+        <Popup>
+          <Loader />
+        </Popup>
+      );
+    }
+  }
+}
+
+class Popup extends Component {
   render() {
     return (
       <div className="bg-purple-100 h-full w-full">
@@ -15,18 +65,7 @@ class FirstLoad extends Component {
               alt="Sunset in the mountains"
             />
           </div>
-          <div className="px-6 py-4">
-            <div className="text-sm mb-2 text-gray-500">
-              Uniboard Setup | Step 1 of 3
-            </div>
-            <div className="font-bold text-xl mb-2">
-              Please Select your subjects below:
-            </div>
-            <p className="text-sm mb-2 text-gray-500">
-              From the team at UniBoard, we sincerely thank you for using our
-              product!
-            </p>
-          </div>
+          <div className="px-6 py-4">{this.props.children}</div>
         </div>
       </div>
     );
