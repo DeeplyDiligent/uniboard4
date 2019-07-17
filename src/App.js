@@ -13,7 +13,9 @@ class App extends Component {
   processUniboardData = (allData) => {
     this.setState({data:allData, loading:false});
   }
+
   render() {
+    console.log('data',this.state.data);
     if (this.state.loading) {
       return (
         <div className="center-on-page">
@@ -21,7 +23,7 @@ class App extends Component {
         </div>
       );
     } else if (!this.state.data) {
-      return <FirstLoad />
+      return <FirstLoad commitSubjectsAndCloudSync = {this.commitSubjectsAndCloudSync} />
     } else {
       return <MainApp />;
     }
