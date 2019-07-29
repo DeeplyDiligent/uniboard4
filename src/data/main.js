@@ -2,8 +2,8 @@ import store from "store";
 import observe from "store/plugins/observe";
 import { setEmitFlags } from "typescript";
 import he from "he";
-import $ from 'jquery';
-import firebase from 'firebase/app';
+import $ from "jquery";
+import firebase from "firebase/app";
 import moment from "moment";
 /*global chrome*/
 
@@ -189,14 +189,11 @@ class Database {
 
   async fetchSubjects() {
     let key = await this._getUniboardSesskey();
-    let url =
-      "https://lms.monash.edu/lib/ajax/service.php?sesskey=" +
-      key +
-      "&info=theme_monash_get_enrolled_courses_by_timeline_classification";
+    let url = `https://lms.monash.edu/lib/ajax/service.php?sesskey=${key}&info=theme_monash_get_enrolled_courses_by_timeline_classification`;
     let response = await fetch(url, {
       method: "post",
       body:
-        '[{"index":0,"methodname":"theme_monash_get_enrolled_courses_by_timeline_classification","args":{"classification":"timeline","limit":999,"offset":0,"sort":"en.timecreated desc","search":null}}]'
+        '[{"index":0,"methodname":"theme_monash_get_enrolled_courses_by_timeline_classification","args":{"classification":"courses","limit":999,"offset":0,"sort":"en.timecreated desc","search":null}}]'
     });
     let json = await response.json();
     let subjects = json[0]["data"]["courses"];
@@ -278,7 +275,7 @@ class Database {
   expansionDone = () => {
     store.set("LAST_UPDATE", new Date());
     store.set("UPDATE_IN_PROGRESS", false);
-    this.commitToFirebase(this._getSubjectData())
+    this.commitToFirebase(this._getSubjectData());
   };
   commitToFirebase(data) {
     let temp1 = data;
@@ -292,7 +289,7 @@ class Database {
           temp2[subjectName][expandableBranch.id] = {
             img: null,
             text: expandableBranch.name,
-            children:[]
+            children: []
           };
           if (
             subjectData[expandableBranch.key] &&
@@ -313,7 +310,12 @@ class Database {
         .apply([], files)
         .filter(x => x)
         .map(file => {
-          temp2[subjectName][file.key] = { children:[], img: this.getIcon(file.icon),link:file.link, text: file.name };
+          temp2[subjectName][file.key] = {
+            children: [],
+            img: this.getIcon(file.icon),
+            link: file.link,
+            text: file.name
+          };
         });
     });
     firebase.initializeApp({
