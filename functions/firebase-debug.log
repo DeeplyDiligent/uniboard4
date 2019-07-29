@@ -1,0 +1,446 @@
+[debug] [2019-07-21T02:26:57.225Z] ----------------------------------------------------------------------
+[debug] [2019-07-21T02:26:57.226Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --only functions
+[debug] [2019-07-21T02:26:57.227Z] CLI Version:   7.1.1
+[debug] [2019-07-21T02:26:57.227Z] Platform:      darwin
+[debug] [2019-07-21T02:26:57.227Z] Node Version:  v10.16.0
+[debug] [2019-07-21T02:26:57.228Z] Time:          Sun Jul 21 2019 12:26:57 GMT+1000 (Australian Eastern Standard Time)
+[debug] [2019-07-21T02:26:57.228Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-21T02:26:57.239Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-21T02:26:57.240Z] > authorizing via signed-in user
+[debug] [2019-07-21T02:26:57.241Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-21T02:26:57.242Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-21T02:26:57.580Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-21T02:26:57.592Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/synopsis-465b0  
+ 
+[debug] [2019-07-21T02:26:58.307Z] <<< HTTP RESPONSE 200
+[info] i  Starting emulators: ["functions"]
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2019-07-21T02:26:58.333Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/synopsis-465b0/adminSdkConfig  
+ 
+[debug] [2019-07-21T02:26:58.744Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions" for Cloud Functions...
+[debug] [2019-07-21T02:26:59.340Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions","node_version":"10.16.0"}
+[debug] [2019-07-21T02:26:59.341Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-07-21T02:26:59.346Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:26:59.349Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:26:59.654Z] [runtime-status] Found google-gax at /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/google-gax/build/src/index.js {}
+[debug] [2019-07-21T02:26:59.655Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-07-21T02:26:59.715Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-07-21T02:26:59.716Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:26:59.717Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:26:59.718Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] i  functions: HTTP trigger initialized at http://localhost:5001/synopsis-465b0/us-central1/getSubjectDataFromMoodle
+[debug] [2019-07-21T02:27:11.968Z] File /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/index.js changed, reloading triggers
+[debug] [2019-07-21T02:27:13.328Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions","node_version":"10.16.0"}
+[debug] [2019-07-21T02:27:13.328Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-07-21T02:27:13.334Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:27:13.336Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:27:13.523Z] [runtime-status] Found google-gax at /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/google-gax/build/src/index.js {}
+[debug] [2019-07-21T02:27:13.523Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-07-21T02:27:13.562Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-07-21T02:27:13.563Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:27:13.564Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:27:13.566Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-07-21T02:27:26.580Z] Accepted request GET /synopsis-465b0/us-central1/getSubjectDataFromMoodle?subjects=[50619,42572]&cookie=MoodleSession=006171598706a28e3a96fa0bf4243853;%20MOODLEID1_=%25EC%253B9%25E2%253B%25DA%25AA%2507;%20_gat=1;%20_pk_id.1.2531=f195ff32e0b4cefb.1562575876.26.1563663355.1563621864. --> getSubjectDataFromMoodle
+[debug] [2019-07-21T02:27:26.902Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions","node_version":"10.16.0"}
+[info] i  functions: Beginning execution of "getSubjectDataFromMoodle"
+[debug] [2019-07-21T02:27:26.903Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-07-21T02:27:26.907Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:27:26.908Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:27:27.096Z] [runtime-status] Found google-gax at /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/google-gax/build/src/index.js {}
+[debug] [2019-07-21T02:27:27.096Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-07-21T02:27:27.135Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-07-21T02:27:27.136Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:27:27.137Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:27:27.138Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-07-21T02:27:27.329Z] [runtime-status] Trigger "getSubjectDataFromMoodle" has been found, beginning invocation! {}
+[debug] [2019-07-21T02:27:27.330Z] [runtime-status]  {"httpsTrigger":{},"name":"getSubjectDataFromMoodle","entryPoint":"getSubjectDataFromMoodle"}
+[debug] [2019-07-21T02:27:27.330Z] [runtime-status] Running getSubjectDataFromMoodle in mode HTTPS {}
+[debug] [2019-07-21T02:27:27.330Z] [default-admin-app-used]  {"databaseURL":"https://synopsis-465b0.firebaseio.com","storageBucket":"synopsis-465b0.appspot.com","projectId":"synopsis-465b0","credential":{}}
+[debug] [2019-07-21T02:27:27.330Z] [runtime-status] Intializing default app. {"databaseURL":"https://synopsis-465b0.firebaseio.com","storageBucket":"synopsis-465b0.appspot.com","projectId":"synopsis-465b0","credential":{}}
+[info] i  Your code does not appear to initialize the 'firebase-admin' module, so we've done it automatically.
+   - Learn more: https://firebase.google.com/docs/admin/setup
+[debug] [2019-07-21T02:27:27.337Z] {"socketPath":"/var/folders/bh/ctgf80js6hqbjl34295d19hdf1l9xs/T/firebase_emulator_invocation_7886.sock"}
+[debug] [2019-07-21T02:27:27.341Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/bh/ctgf80js6hqbjl34295d19hdf1l9xs/T/firebase_emulator_invocation_7886.sock"}
+[debug] [2019-07-21T02:27:27.348Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-07-21T02:27:27.355Z] [runtime-status] Ephemeral server survived. {}
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=50619&type=20"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=42572&type=20"
+[info] >  get started for  undefined 90
+[info] >  get started for  undefined 70
+[info] >  get started for  831902 30
+[info] >  get started for  831904 30
+[info] >  get started for  831903 30
+[info] >  get started for  831905 30
+[info] >  get started for  831906 30
+[info] >  get started for  831907 30
+[info] >  get started for  831953 30
+[info] >  get started for  831908 30
+[info] >  get started for  831909 30
+[info] >  get started for  831910 30
+[info] >  get started for  831911 30
+[info] >  get started for  831912 30
+[info] >  get started for  831914 30
+[info] >  get started for  831915 30
+[info] >  get started for  831913 30
+[info] >  get started for  831916 30
+[info] >  get started for  831917 30
+[info] >  get started for  831918 30
+[info] >  get started for  831919 30
+[info] >  get started for  831920 30
+[info] >  get started for  831921 30
+[info] >  1 '/' 25
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831902&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831904&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831903&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831905&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831906&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831907&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831953&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831908&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831909&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831910&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831911&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831912&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831914&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831915&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831913&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831916&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831917&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831918&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831919&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831920&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831921&type=30"
+[info] >  2 '/' 25
+[info] >  3 '/' 25
+[info] >  get started for  undefined 90
+[info] >  get started for  undefined 70
+[info] >  get started for  705988 30
+[info] >  get started for  705989 30
+[info] >  get started for  705990 30
+[info] >  get started for  705991 30
+[info] >  get started for  705992 30
+[info] >  get started for  705993 30
+[info] >  get started for  705994 30
+[info] >  get started for  705995 30
+[info] >  get started for  705996 30
+[info] >  get started for  705997 30
+[info] >  get started for  706002 30
+[info] >  get started for  705998 30
+[info] >  get started for  705999 30
+[info] >  get started for  706000 30
+[info] >  get started for  706001 30
+[info] >  get started for  706003 30
+[info] >  get started for  706004 30
+[info] >  get started for  706005 30
+[info] >  get started for  706006 30
+[info] >  4 '/' 44
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705988&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705989&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705990&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705991&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705992&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705993&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705994&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705995&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705996&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705997&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706002&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705998&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705999&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706000&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706001&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706003&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706004&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706005&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706006&type=30"
+[info] >  5 '/' 44
+[info] >  6 '/' 44
+[info] >  7 '/' 44
+[info] >  8 '/' 44
+[info] >  9 '/' 44
+[info] >  10 '/' 44
+[info] >  11 '/' 44
+[info] >  12 '/' 44
+[info] >  13 '/' 44
+[info] >  14 '/' 44
+[info] >  15 '/' 44
+[info] >  16 '/' 44
+[info] >  17 '/' 44
+[info] >  18 '/' 44
+[info] >  19 '/' 44
+[info] >  20 '/' 44
+[info] >  21 '/' 44
+[info] >  22 '/' 44
+[info] >  23 '/' 44
+[info] >  24 '/' 44
+[info] >  25 '/' 44
+[info] >  26 '/' 44
+[info] >  27 '/' 44
+[info] >  28 '/' 44
+[info] >  29 '/' 44
+[info] >  30 '/' 44
+[info] >  31 '/' 44
+[info] >  32 '/' 44
+[info] >  33 '/' 44
+[info] >  34 '/' 44
+[info] >  35 '/' 44
+[info] >  36 '/' 44
+[info] >  37 '/' 44
+[info] >  38 '/' 44
+[info] >  39 '/' 44
+[info] >  40 '/' 44
+[info] >  41 '/' 44
+[info] >  42 '/' 44
+[debug] [2019-07-21T02:27:41.569Z] File /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/index.js changed, reloading triggers
+[debug] [2019-07-21T02:27:42.931Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions","node_version":"10.16.0"}
+[debug] [2019-07-21T02:27:42.932Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-07-21T02:27:42.936Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:27:42.938Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:27:43.157Z] [runtime-status] Found google-gax at /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/google-gax/build/src/index.js {}
+[debug] [2019-07-21T02:27:43.157Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-07-21T02:27:43.198Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-07-21T02:27:43.199Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T02:27:43.200Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T02:27:43.201Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}}
+[warn] ⚠  Your function timed out after ~60s. To configure this timeout, see
+      https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation.
+[debug] [2019-07-21T03:10:29.747Z] Accepted request GET /synopsis-465b0/us-central1/getSubjectDataFromMoodle?subjects=[50619,42572]&cookie=MoodleSession=006171598706a28e3a96fa0bf4243853;%20MOODLEID1_=%25EC%253B9%25E2%253B%25DA%25AA%2507;%20_gat=1;%20_pk_id.1.2531=f195ff32e0b4cefb.1562575876.26.1563663355.1563621864. --> getSubjectDataFromMoodle
+[debug] [2019-07-21T03:10:30.048Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions","node_version":"10.16.0"}
+[info] i  functions: Beginning execution of "getSubjectDataFromMoodle"
+[debug] [2019-07-21T03:10:30.049Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-07-21T03:10:30.054Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T03:10:30.057Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T03:10:30.253Z] [runtime-status] Found google-gax at /Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/google-gax/build/src/index.js {}
+[debug] [2019-07-21T03:10:30.253Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-07-21T03:10:30.296Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-07-21T03:10:30.297Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.1.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-07-21T03:10:30.298Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-07-21T03:10:30.299Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.2.0","resolution":"/Users/dbha0012/GitHub/ChromeExt/UniBoard/v4/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2019-07-21T03:10:30.502Z] [runtime-status] Trigger "getSubjectDataFromMoodle" has been found, beginning invocation! {}
+[debug] [2019-07-21T03:10:30.502Z] [runtime-status]  {"httpsTrigger":{},"name":"getSubjectDataFromMoodle","entryPoint":"getSubjectDataFromMoodle"}
+[debug] [2019-07-21T03:10:30.502Z] [runtime-status] Running getSubjectDataFromMoodle in mode HTTPS {}
+[debug] [2019-07-21T03:10:30.502Z] [default-admin-app-used]  {"databaseURL":"https://synopsis-465b0.firebaseio.com","storageBucket":"synopsis-465b0.appspot.com","projectId":"synopsis-465b0","credential":{}}
+[debug] [2019-07-21T03:10:30.502Z] [runtime-status] Intializing default app. {"databaseURL":"https://synopsis-465b0.firebaseio.com","storageBucket":"synopsis-465b0.appspot.com","projectId":"synopsis-465b0","credential":{}}
+[info] i  Your code does not appear to initialize the 'firebase-admin' module, so we've done it automatically.
+   - Learn more: https://firebase.google.com/docs/admin/setup
+[debug] [2019-07-21T03:10:30.511Z] {"socketPath":"/var/folders/bh/ctgf80js6hqbjl34295d19hdf1l9xs/T/firebase_emulator_invocation_11767.sock"}
+[debug] [2019-07-21T03:10:30.513Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/bh/ctgf80js6hqbjl34295d19hdf1l9xs/T/firebase_emulator_invocation_11767.sock"}
+[debug] [2019-07-21T03:10:30.519Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-07-21T03:10:30.525Z] [runtime-status] Ephemeral server survived. {}
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=50619&type=20"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=42572&type=20"
+[info] >  get started for  undefined 90
+[info] >  get started for  undefined 70
+[info] >  get started for  705988 30
+[info] >  get started for  705989 30
+[info] >  get started for  705990 30
+[info] >  get started for  705991 30
+[info] >  get started for  705992 30
+[info] >  get started for  705993 30
+[info] >  get started for  705994 30
+[info] >  get started for  705995 30
+[info] >  get started for  705996 30
+[info] >  get started for  705997 30
+[info] >  get started for  706002 30
+[info] >  get started for  705998 30
+[info] >  get started for  705999 30
+[info] >  get started for  706000 30
+[info] >  get started for  706001 30
+[info] >  get started for  706003 30
+[info] >  get started for  706004 30
+[info] >  get started for  706005 30
+[info] >  get started for  706006 30
+[info] >  1 '/' 21
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705988&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705989&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705990&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705991&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705992&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705993&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705994&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705995&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705996&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705997&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706002&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705998&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=705999&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706000&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706001&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706003&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706004&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706005&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=706006&type=30"
+[info] >  2 '/' 21
+[info] >  3 '/' 21
+[info] >  get started for  undefined 90
+[info] >  get started for  undefined 70
+[info] >  get started for  831902 30
+[info] >  get started for  831904 30
+[info] >  get started for  831903 30
+[info] >  get started for  831905 30
+[info] >  get started for  831906 30
+[info] >  get started for  831907 30
+[info] >  get started for  831953 30
+[info] >  get started for  831908 30
+[info] >  get started for  831909 30
+[info] >  get started for  831910 30
+[info] >  get started for  831911 30
+[info] >  get started for  831912 30
+[info] >  get started for  831914 30
+[info] >  get started for  831915 30
+[info] >  get started for  831913 30
+[info] >  get started for  831916 30
+[info] >  get started for  831917 30
+[info] >  get started for  831918 30
+[info] >  get started for  831919 30
+[info] >  get started for  831920 30
+[info] >  get started for  831921 30
+[info] >  4 '/' 42
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831902&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831904&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831903&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831905&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831906&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831907&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831953&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831908&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831909&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831910&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831911&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831912&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831914&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831915&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831913&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831916&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831917&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831918&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831919&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831920&type=30"
+[warn] ⚠  Unknown network resource requested!
+   - URL: "https://lms.monash.edu/lib/ajax/getnavbranch.php?id=831921&type=30"
+[info] >  5 '/' 42
+[info] >  6 '/' 42
+[info] >  7 '/' 42
+[info] >  8 '/' 42
+[info] >  9 '/' 42
+[info] >  10 '/' 42
+[info] >  11 '/' 42
+[info] >  12 '/' 42
+[info] >  13 '/' 42
+[info] >  14 '/' 42
+[info] >  15 '/' 42
+[info] >  16 '/' 42
+[info] >  17 '/' 42
+[info] >  18 '/' 42
+[info] >  19 '/' 42
+[info] >  20 '/' 42
+[info] >  21 '/' 42
+[info] >  22 '/' 42
+[info] >  23 '/' 42
+[info] >  24 '/' 42
+[info] >  25 '/' 42
+[info] >  26 '/' 42
+[info] >  27 '/' 42
+[info] >  28 '/' 42
+[info] >  29 '/' 42
+[info] >  30 '/' 42
+[info] >  31 '/' 42
+[info] >  32 '/' 42
+[info] >  33 '/' 42
+[info] >  34 '/' 42
+[info] >  35 '/' 42
+[info] >  36 '/' 42
+[info] >  37 '/' 42
+[info] >  38 '/' 42
+[info] >  39 '/' 42
+[info] >  40 '/' 42
+[info] >  41 '/' 42
+[info] >  42 '/' 42
+[info] i  functions: Finished "getSubjectDataFromMoodle" in ~7s

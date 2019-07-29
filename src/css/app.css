@@ -51,3 +51,29 @@ body {
 .custom-shadow {
   box-shadow: 0 0px 6px 0px rgba(0,0,0,0.2);
 }
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-center {
+  -webkit-animation: rotate-center 1s ease-in-out infinite both;
+  animation: rotate-center 1s ease-in-out infinite both;
+}

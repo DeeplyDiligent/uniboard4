@@ -28,7 +28,7 @@ class FirstLoad extends Component {
         <Popup>
           <Step1SubjectSelect
             setSelectedSubjects={this.setSelectedSubjects}
-            nextStep={this.nextStep}
+            nextStep={this.commitSubjectsAndCloudSync}
           />
         </Popup>
       );
@@ -38,11 +38,11 @@ class FirstLoad extends Component {
           <Step2LoadSubjectContent
             nextStep={this.nextStep}
             setCloudSync={this.setCloudSync}
+            commit = {this.commitSubjectsAndCloudSync}
           />
         </Popup>
       );
     } else if (this.state.step === 3) {
-      this.commitSubjectsAndCloudSync();
       return (
         <Popup>
           <Loader />

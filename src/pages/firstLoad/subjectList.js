@@ -15,11 +15,14 @@ class SubjectList extends Component {
     let subjectDict = {};
     subjects.map(x => {
       if (x.id) {
-        x.checked = false;
+        x.checked = this.checkIfSubjectChecked(x.id);
         subjectDict[x.id] = x;
       }
-    });
+    }); 
     return subjectDict;
+  }
+  checkIfSubjectChecked(subjectId){
+    return (database.getSubjectList().map(x=>x.id).includes(subjectId))
   }
   updateSubjectSelected = (id, checkedStatus) => {
     let subjectData = this.state.subjects;
@@ -30,7 +33,7 @@ class SubjectList extends Component {
   render() {
     if (this.state.subjects) {
       return (
-        <div className="rounded-lg border-gray-400 border text-left bg-white my-4 px-4 w-3/4 mx-auto h-48 py-2 overflow-auto">
+        <div className={"rounded-lg border-gray-400 border text-left bg-white my-4 px-4 w-3/4 mx-auto h-48 py-2 overflow-auto "+this.props.className}>
           {Object.values(this.state.subjects)
             .reverse()
             .map((subject, i) => {

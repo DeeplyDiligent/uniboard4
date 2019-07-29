@@ -4,7 +4,7 @@ class Step2LoadSubjectContent extends Component {
   state = {};
   setCloudSync(cloudSync) {
     this.props.setCloudSync(cloudSync);
-    this.props.nextStep();
+    this.props.commit();
   }
   render() {
     return (

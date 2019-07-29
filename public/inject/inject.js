@@ -1,3 +1,13 @@
+var topelement = document.createElement("div");
+topelement.id="loader"
+topelement.style.height="100%";
+topelement.style.width="100%";
+topelement.style.position="fixed";
+topelement.style.top=0;
+topelement.style.zIndex="10000";
+topelement.style.background="white";
+document.body.prepend(topelement);
+
 $(document).ready(function(){
     $('head').append("<link href='https://fonts.googleapis.com/css?family=Titillium+Web&display=swap' rel='stylesheet'>");
     function prepareHeaderBar(){
@@ -16,6 +26,11 @@ $(document).ready(function(){
         $('#page').removeClass('container-fluid');
         $('#page-footer').hide();
         setInterval(function(){ $('#page').css({width:$('body').width(),height:$('body').height()-72}); }, 0);
+        showUniboardBasedOnSavedState();
+        hideLoader();
+    }
+    function hideLoader(){
+        $('#loader').fadeOut();
     }
     function prepareMinimizeButton(){
         $('.header-right').append("<div class='usermenu' id='uniboard-minimize'></div>");
@@ -71,7 +86,6 @@ $(document).ready(function(){
     }
     prepareHeaderBar();
     prepareMinimizeButton();
-    showUniboardBasedOnSavedState();
     $('#uniboard-max-button,#uniboard-minimize').click(bindMinimizeListeners);
     storeSesskey(startIframe);
 });
