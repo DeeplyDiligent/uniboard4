@@ -27,7 +27,7 @@ class Attachment extends Component {
     //     this.props.resource.icon.title
     //   );
     // } else {
-    window.open(this.props.resource.link);
+    window.open(this.props.resource.link+"&redirect=1");
     // }
   };
 

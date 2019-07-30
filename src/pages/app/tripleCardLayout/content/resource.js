@@ -22,14 +22,14 @@ class Resource extends Component {
   };
 
   openLink = () => {
-    if (this.props.resource.icon.title === "Folder") {
-      popup.newWebsitePopup(
-        this.props.resource.link,
-        this.props.resource.icon.title
-      );
-    } else {
-      window.open(this.props.resource.link);
-    }
+    // if (this.props.resource.icon.title === "Folder") {
+    //   popup.newWebsitePopup(
+    //     this.props.resource.link,
+    //     this.props.resource.icon.title
+    //   );
+    // } else {
+      window.open(this.props.resource.link+"&redirect=1");
+    // }
   };
 
   render() {
