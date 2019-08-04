@@ -256,7 +256,9 @@ class Database {
     this.done++;
     let data = JSON.parse(he.decode(await branchData.text()));
     let uniboardData = this._getSubjectData();
-    uniboardData[subjectid][data.key] = data;
+    if(!data.error){
+      uniboardData[subjectid][data.key] = data;
+    }
     this._setSubjectData(uniboardData);
     if (data.children && data.children[0]) {
       data.children.map((x, i) => {

@@ -35,7 +35,7 @@ class UnitBoard extends Component {
       "#20B2AA"
     ];
     var borderColor = colorList[this.props.number];
-    if(!Object.values(this.props.unitData)[0]) return false;
+    if (!Object.values(this.props.unitData)[0]) return false;
     return (
       <div
         style={{
@@ -80,7 +80,7 @@ class UnitBoard extends Component {
           <div className="px-4 py-2">
             {Object.values(this.props.unitData)[0].children.map((child, _) => {
               let value = this.props.unitData[child.expandable];
-              if (value) {
+              if (value && !value.error) {
                 return (
                   <WeekCard
                     weekName={value.name}
