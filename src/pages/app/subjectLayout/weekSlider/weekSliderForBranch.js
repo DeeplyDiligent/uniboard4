@@ -41,7 +41,7 @@ class WeekSliderForBranch extends Component {
               Open Moodle <i className="fas fa-external-link-alt" />
             </div>
           </a>
-          <ShowWeekText key={new Date()} link={weekData.link} />
+          <ShowWeekText key={weekData.link} link={weekData.link} />
           <div className="mt-4">
             {/* {(weekData.files && weekData.files.length) ? <Attachments attachments={weekData.files} heading={"FILES"} icon={"fas fa-file"}/>: false} */}
             {Object.keys(catFiles).map((key, _)=>{

@@ -1,5 +1,6 @@
 const functions = require("firebase-functions");
 var req = require("request-promise");
+var express = require('express');
 
 exports.getSubjectDataFromMoodle = functions.https.onRequest(
   (request, response) => {
@@ -43,5 +44,13 @@ exports.getSubjectDataFromMoodle = functions.https.onRequest(
       a[subjectId] = {};
       getAll(subjectId, 20, subjectId);
     });
+  }
+);
+
+
+exports.getCookie = functions.https.onRequest(
+  (request, response) => {
+    console.log(request)
+    response.send(request.cookies['MoodleSession'])
   }
 );

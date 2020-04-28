@@ -23,11 +23,11 @@ class WeekSlider extends Component {
   render() {
     let styles = {};
     styles.backgroundAndSidebar = { left: 0, top: 0 };
-    styles.sidebar = { right: 0, zIndex: "1000" };
+    styles.sidebar = { right: 0, zIndex: "1000", minWidth: "300px"};
     return (
       <Box
         pose={this.state.isVisible ? "visible" : "hidden"}
-        className="sidebarContent bg-white max-w-sm rounded shadow-lg w-full lg:w-1/3 h-full"
+        className="sidebarContent bg-white max-w-sm rounded shadow-lg w-full h-full"
         style={styles.sidebar}>
         <PerfectScrollbar autoHide>
           <div className="px-8 py-4">
