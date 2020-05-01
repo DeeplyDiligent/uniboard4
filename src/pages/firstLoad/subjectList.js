@@ -48,7 +48,7 @@ class SubjectList extends Component {
         </div>
       );
     }
-    return <Loader />;
+    return <div class="m-5 text-center"><Loader /></div>;
   }
 }
 

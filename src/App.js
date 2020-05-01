@@ -10,6 +10,7 @@ import WeekSliderForBranch from "./pages/app/subjectLayout/weekSlider/weekSlider
 import Calendar from "./pages/app/calendar/calendar";
 import Settings from "./pages/app/settings/settings";
 import moment from "moment";
+import Chat from "./pages/app/chat/chat";
 
 class App extends Component {
   state = { loading: true, data: null, subjectsSelected: null };
@@ -45,6 +46,7 @@ class App extends Component {
             />
             <Route path="/calendar" exact component={Calendar} />
             <Route path="/settings" exact component={Settings} />
+            <Route path="/chat/:unitName/:unitId" exact component={Chat} />
           </div>
         </Router>
       );

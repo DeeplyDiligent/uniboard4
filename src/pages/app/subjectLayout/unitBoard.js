@@ -6,6 +6,7 @@ import ButtonsBesideSubjectName from "../../../components/reused/buttonsBesideSu
 import ViewEditTitle from "./viewEditTitle";
 import database from "../../../data/main";
 import WeekCard from "./weekCard";
+import { Link } from "react-router-dom";
 
 class UnitBoard extends Component {
   state = {};
@@ -64,6 +65,13 @@ class UnitBoard extends Component {
             />
           </div>
           <div className="flex justify-center">
+            <Link to={`/chat/${Object.values(this.props.unitData)[0].name}/${Object.values(this.props.unitData)[0].key}`}>
+              <button
+                title="Chat In This Unit"
+                className="bg-white hover:bg-green-100 text-green-600 font-bold py-1 px-1 rounded focus:outline-none">
+                <i className="fas fa-comment text-md" />
+              </button>
+            </Link>
             <ButtonsBesideSubjectName
               onClick={this.startDownload}
               title="Download All"

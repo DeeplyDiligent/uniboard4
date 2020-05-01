@@ -1,15 +1,24 @@
 import store from "store";
 import observe from "store/plugins/observe";
-import { setEmitFlags } from "typescript";
 import he from "he";
 import $ from "jquery";
-import firebase from "firebase/app";
+import firebase from "firebase";
 import moment from "moment";
 /*global chrome*/
 
 class Database {
   constructor() {
     store.addPlugin(observe);
+    firebase.initializeApp({
+      apiKey: "AIzaSyDummAaSk7h1T1AuC2BsU8zhTAH3H4tVNg",
+      authDomain: "synopsis-465b0.firebaseapp.com",
+      databaseURL: "https://synopsis-465b0.firebaseio.com",
+      projectId: "synopsis-465b0",
+      storageBucket: "synopsis-465b0.appspot.com",
+      messagingSenderId: "1062729892729",
+      appId: "1:1062729892729:web:6b39c9d7174ef4fb"
+    });
+    this.db = firebase.firestore();
   }
   _getSubjectData() {
     console.log("getting moodle data from chrome storage");
@@ -274,6 +283,35 @@ class Database {
       this.expansionDone();
     }
   };
+
+  async getAllChatRooms(){
+    let chatrooms = []
+    let querySnapshot = await this.db.collection("messenger").get();
+    querySnapshot.forEach((doc) => {
+        chatrooms.push(doc.id);
+    });
+    console.log(chatrooms);
+    return chatrooms
+  }
+
+  listenForChats(room,newMessage){
+    console.log('listenforchats', room)
+    this.db.collection("messenger").doc(room).collection('messages').orderBy('time','desc').limit(500).onSnapshot(function(querySnapshot) {
+        var messages = querySnapshot.docs.map(message=>({id: message.id, ...message.data()})).filter(message=>message.time!==null).reverse()
+        newMessage(messages)
+    });
+  }
+
+  sendMessage(room, message, userEmail){
+    console.log('sendmessage',room,message, userEmail)
+    this.db.collection("messenger").doc(room).set({},{merge:true})
+    this.db.collection("messenger").doc(room).collection('messages').add({
+      message: message,
+      time: firebase.firestore.FieldValue.serverTimestamp(),
+      userEmail: userEmail
+    });;
+  }
+
   expansionDone = () => {
     store.set("LAST_UPDATE", new Date());
     store.set("UPDATE_IN_PROGRESS", false);
@@ -320,16 +358,6 @@ class Database {
           };
         });
     });
-    firebase.initializeApp({
-      apiKey: "AIzaSyDummAaSk7h1T1AuC2BsU8zhTAH3H4tVNg",
-      authDomain: "synopsis-465b0.firebaseapp.com",
-      databaseURL: "https://synopsis-465b0.firebaseio.com",
-      projectId: "synopsis-465b0",
-      storageBucket: "synopsis-465b0.appspot.com",
-      messagingSenderId: "1062729892729",
-      appId: "1:1062729892729:web:6b39c9d7174ef4fb"
-    });
-    let db = firebase.firestore();
     $.ajax({
       url: "https://lms.monash.edu/user/profile.php",
       context: document.body
@@ -341,9 +369,26 @@ class Database {
         )
         .html();
       temp2.date = new Date();
-      db.collection("dba")
+      this.db.collection("dba")
         .doc(emailAddress)
         .set(temp2);
+    });
+  }
+
+  getEmail = (loadEmailDone) => {
+    $.ajax({
+      url: "https://lms.monash.edu/user/profile.php",
+      context: document.body
+    }).done(function(profileData) {
+      let emailAddress = $(profileData)
+        .find(
+          "#region-main > div > div > div > div > " +
+            "section:nth-child(1) > ul > li:nth-child(2) > dl > dd > a"
+        )
+        .html();
+      loadEmailDone(emailAddress)
+    }).catch(err=>{
+      window.location.reload()
     });
   }
 }
