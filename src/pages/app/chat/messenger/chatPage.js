@@ -20,7 +20,7 @@ class Message extends Component {
 }
 
 class ChatPage extends Component {
-  state = { messages: [], userEmail: null};
+  state = { messages: [], userEmail: null, error: false};
   scrollObj = React.createRef();
   
   componentDidMount() {
@@ -33,7 +33,7 @@ class ChatPage extends Component {
   
   updateSubjectMessages(){
     database.listenForChats(this.props.subject.id, this.newMessage);
-    database.getEmail((email)=>this.setState({userEmail: email}))
+    database.getEmail((email, err)=>this.setState(err?{error:true}:{userEmail: email}))
   }
   
   newMessage = messages => {
@@ -67,6 +67,7 @@ class ChatPage extends Component {
     database.listenForChats(this.props.subject.id, () => {});
   }
   render() {
+    if(this.state.error) return  <div>Please refresh your browser, you have been logged out!</div>
     if(!this.state.userEmail) return  <i className={"fas fa-sync-alt text-center px-1 rotate-center" }/>
     return (
       <div className="w-full mx-auto flex flex-grow items-center justify-center">

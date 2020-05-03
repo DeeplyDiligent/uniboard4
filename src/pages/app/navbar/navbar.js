@@ -5,6 +5,7 @@ import Logo from "./logo";
 import Calendar from "../calendar/calendar";
 import Settings from "../settings/settings";
 import CalButton from "./calButton";
+import ChatButton from "./chatButton";
 import SettingsButton from "./settingsButton";
 class Navbar extends Component {
   state = {};
@@ -15,6 +16,7 @@ class Navbar extends Component {
         <SearchBar className="w-64" />
         <CalButton />
         <SettingsButton />
+        <ChatButton />
       </div>
     );
   }

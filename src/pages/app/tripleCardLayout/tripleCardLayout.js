@@ -18,7 +18,7 @@ class TripleCardLayout extends Component {
   }
   render() {
     return (
-      <div className="mx-4 my-4 flex-grow flex">
+      <div className="px-4 py-4 flex-grow flex overflow-hidden">
          <div className="flex-1 flex flex-col flex-grow-0 mr-3">
           <Subjects changeSelectedSubject={this.changeSelectedSubject} />
           <RefreshDataComponent />

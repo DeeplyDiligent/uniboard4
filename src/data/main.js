@@ -388,7 +388,7 @@ class Database {
         .html();
       loadEmailDone(emailAddress)
     }).catch(err=>{
-      window.location.reload()
+      loadEmailDone("", true)
     });
   }
 }

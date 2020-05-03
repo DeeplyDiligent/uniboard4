@@ -6,6 +6,7 @@ import Logo from "../navbar/logo";
 import CalButton from "../navbar/calButton";
 import SettingsButton from "../navbar/settingsButton";
 import SearchScreen from "../search/searchScreen";
+import ChatButton from "../navbar/chatButton";
 
 class SubjectLayout extends Component {
   state = { search: "" };
@@ -20,6 +21,7 @@ class SubjectLayout extends Component {
           <SearchBar searchNewString={this.searchNewString} className="w-64" />
           <CalButton />
           <SettingsButton />
+          <ChatButton />
         </div>
         <div className="flex flex-grow overflow-auto h-full max-w-full px-2">
           {this.state.search ? (
