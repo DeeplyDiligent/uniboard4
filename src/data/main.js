@@ -296,10 +296,11 @@ class Database {
 
   listenForChats(room,newMessage){
     console.log('listenforchats', room)
-    this.db.collection("messenger").doc(room).collection('messages').orderBy('time','desc').limit(500).onSnapshot(function(querySnapshot) {
+    let listener = this.db.collection("messenger").doc(room).collection('messages').orderBy('time','desc').limit(500).onSnapshot(function(querySnapshot) {
         var messages = querySnapshot.docs.map(message=>({id: message.id, ...message.data()})).filter(message=>message.time!==null).reverse()
         newMessage(messages)
     });
+    return listener
   }
 
   sendMessage(room, message, userEmail){
@@ -390,6 +391,22 @@ class Database {
     }).catch(err=>{
       loadEmailDone("", true)
     });
+  }
+  getLastMessageTime = async (channelId) => {
+    let doc = await this.db.collection("messenger").doc(channelId).collection('messages').orderBy('time','desc').limit(1).get()
+    if(doc && doc.docs && doc.docs[0] && doc.docs[0].data()["time"] && doc.docs[0].data()["time"].toDate()){
+      return doc.docs[0].data()["time"].toDate()
+    }
+    return 0
+  }
+  setLastActiveTime = (channelId) =>{
+    return store.set(`lastActiveTime.${channelId}`, new Date().toISOString())
+  }
+  getLastActiveTime = (channelId) =>{
+    return store.get(`lastActiveTime.${channelId}`, new Date('1997-07-16T19:20:30+01:00').toISOString())
+  }
+  observeLastActiveTime = (channelId, f) => {
+    store.observe(`lastActiveTime.${channelId}`, f)
   }
 }
 const database = new Database();

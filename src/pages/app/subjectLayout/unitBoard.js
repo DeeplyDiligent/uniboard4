@@ -7,6 +7,7 @@ import ViewEditTitle from "./viewEditTitle";
 import database from "../../../data/main";
 import WeekCard from "./weekCard";
 import { Link } from "react-router-dom";
+import NewMsgCounter from "../chat/newMsgCounter";
 
 class UnitBoard extends Component {
   state = {};
@@ -65,10 +66,11 @@ class UnitBoard extends Component {
             />
           </div>
           <div className="flex justify-center">
+            <NewMsgCounter channelId={Object.values(this.props.unitData)[0].key}/>
             <Link to={`/chat/${Object.values(this.props.unitData)[0].name}/${Object.values(this.props.unitData)[0].key}`}>
               <button
                 title="Chat In This Unit"
-                className="bg-white hover:bg-green-100 text-green-600 font-bold py-1 px-1 rounded focus:outline-none">
+                className="bg-white hover:bg-purple-100 text-purple-600 font-bold py-1 px-1 rounded focus:outline-none">
                 <i className="fas fa-comment text-md" />
               </button>
             </Link>

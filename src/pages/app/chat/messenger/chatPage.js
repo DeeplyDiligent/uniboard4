@@ -4,12 +4,13 @@ import moment from 'moment';
 import database from "../../../../data/main";
 
 class Message extends Component {
-  state = {};
+  state = {}
   render() {
+    let name = this.props.name || "Anon@Anon"
     return (
       <div className={`mt-4 flex flex-col ${this.props.email===this.props.name?"items-end":"items-start"}`}>
         <div className="text-grey-900 inline-block text-sm">
-          {this.props.name.split("@")[0]||"Anon"} | {moment(this.props.time.toDate()).format('LT')}
+          {name.split("@")[0]||"Anon"} | {moment(this.props.time.toDate()).format('LT')}
         </div>
         <p className={`rounded-sm py-3 px-2 ${this.props.email===this.props.name?"bg-blue-300":"bg-blue-200"} mt-1`}>
           {this.props.message}
@@ -22,21 +23,28 @@ class Message extends Component {
 class ChatPage extends Component {
   state = { messages: [], userEmail: null, error: false};
   scrollObj = React.createRef();
+  listener = null
   
   componentDidMount() {
     this.updateSubjectMessages()
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState){
-    if(prevProps.subject.id !== this.props.subject.id) this.updateSubjectMessages()
+    if(prevProps.subject.id !== this.props.subject.id) {
+      console.log('dispose')
+      if(this.listener) this.listener()
+      this.updateSubjectMessages()
+    }
   }
   
   updateSubjectMessages(){
-    database.listenForChats(this.props.subject.id, this.newMessage);
+    database.setLastActiveTime(this.props.subject.id)
+    this.listener = database.listenForChats(this.props.subject.id, this.newMessage);
     database.getEmail((email, err)=>this.setState(err?{error:true}:{userEmail: email}))
   }
   
   newMessage = messages => {
+    database.setLastActiveTime(this.props.subject.id)
     messages = messages.sort(function(a, b) {
       return a.time - b.time;
     });
@@ -64,7 +72,8 @@ class ChatPage extends Component {
     this.messageInput.value = ''
   }
   componentWillUnmount() {
-    database.listenForChats(this.props.subject.id, () => {});
+    console.log('dispose')
+    if(this.listener) this.listener()
   }
   render() {
     if(this.state.error) return  <div>Please refresh your browser, you have been logged out!</div>

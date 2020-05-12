@@ -1,6 +1,11 @@
 const functions = require("firebase-functions");
 var req = require("request-promise");
-var express = require('express');
+var express = require("express");
+const admin = require("firebase-admin");
+
+admin.initializeApp();
+
+const db = admin.firestore();
 
 exports.getSubjectDataFromMoodle = functions.https.onRequest(
   (request, response) => {
@@ -15,7 +20,7 @@ exports.getSubjectDataFromMoodle = functions.https.onRequest(
           "&type=" +
           type,
         method: "POST",
-        headers: { Cookie: cookie }
+        headers: { Cookie: cookie },
       });
       let data = JSON.parse(navData);
       done++;
@@ -40,17 +45,25 @@ exports.getSubjectDataFromMoodle = functions.https.onRequest(
     let a = {};
     let counter = subjects.length;
     let done = 0;
-    subjects.map(subjectId => {
+    subjects.map((subjectId) => {
       a[subjectId] = {};
       getAll(subjectId, 20, subjectId);
     });
   }
 );
 
+exports.getCookie = functions.https.onRequest((request, response) => {
+  console.log(request);
+  response.send(request.cookies["MoodleSession"]);
+});
 
-exports.getCookie = functions.https.onRequest(
-  (request, response) => {
-    console.log(request)
-    response.send(request.cookies['MoodleSession'])
-  }
-);
+exports.newMessage = functions.firestore
+  .document("/messenger/{subjectId}/messages/{messageId}")
+  .onCreate(async (data, context) => {
+    await db
+      .collection("messenger")
+      .doc(context.params.subjectId)
+      .set({ msgCounter: admin.firestore.FieldValue.increment(1) }, { merge: true });
+
+    return true;
+  });
