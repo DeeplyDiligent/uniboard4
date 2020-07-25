@@ -77,3 +77,9 @@ body {
   -webkit-animation: rotate-center 1s ease-in-out infinite both;
   animation: rotate-center 1s ease-in-out infinite both;
 }
+
+.swal-icon.swal-icon--custom {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+}

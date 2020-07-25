@@ -53,7 +53,7 @@ class ShowWeekText extends Component {
   render() {
     if (this.state.text && this.state.text !== "no-content") {
       return (
-        <div className="mt-3 overflow-hidden shadow rounded">
+        <div className="mt-3 overflow-hidden shadow rounded table">
           <PerfectScrollbar autoHide autoHeight autoHeightMax={"35vh"}>
             <div
               id="pagecontent"
@@ -68,7 +68,7 @@ class ShowWeekText extends Component {
       return false;
     }
     return (
-      <div className="mt-3 overflow-hidden p-3 shadow rounded text-center">
+      <div className="mt-3 overflow-hidden p-3 shadow rounded text-center table">
         <PerfectScrollbar autoHide autoHeight autoHeightMin={75}>
           <i class="fas fa-circle-notch fa-spin text-5xl" />
         </PerfectScrollbar>

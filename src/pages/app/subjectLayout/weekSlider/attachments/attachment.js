@@ -40,7 +40,7 @@ class Attachment extends Component {
             onClick={this.openLink}
             className="bg-purple-100 hover:bg-purple-200 text-gray-800 font-bold pl-4 pr-2 py-2 rounded-l-full flex">
             <div className="self-center flex-shrink-0">{resourceIcon}</div>
-            <div className="mx-2 text-left">{this.props.resource.name}</div>
+            <div className="mx-2 text-left break-all">{this.props.resource.name}</div>
             <i className="fas fa-external-link-alt ml-2 self-center" />
           </button>
           <button
@@ -57,7 +57,7 @@ class Attachment extends Component {
         onClick={this.openLink}
         className="bg-purple-100 hover:bg-purple-200 text-gray-800 font-bold pl-4 pr-2 py-2 my-2 rounded-full flex">
         <div className="self-center flex-shrink-0">{resourceIcon}</div>
-        <div className="mx-2 text-left">{this.props.resource.name}</div>
+        <div className="mx-2 text-left break-all">{this.props.resource.name}</div>
         <i className="fas fa-external-link-alt ml-2 self-center" />
       </button>
     );

@@ -24,7 +24,8 @@
     "unlimitedStorage",
     "tabs",
     "downloads",
-    "https://lms.monash.edu/*"
+    "https://lms.monash.edu/*",
+    "https://*.cloudfront.net/*"
   ],
   "web_accessible_resources": ["index.html", "img/*", "https://fonts.googleapis.com/"],
   "content_scripts": [
@@ -44,6 +45,5 @@
       "css": ["css/select2.min.css", "css/firebaseui.css", "css/tingle.min.css","css/styles.css"]
     }
   ],
-  "debug": true,
-  "version": "4.0.9"
+  "version": "4.0.13"
 }

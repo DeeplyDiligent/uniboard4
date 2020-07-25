@@ -7,6 +7,7 @@ import CalButton from "../navbar/calButton";
 import SettingsButton from "../navbar/settingsButton";
 import SearchScreen from "../search/searchScreen";
 import ChatButton from "../navbar/chatButton";
+import ActeaAd from "../navbar/acteaAd";
 
 class SubjectLayout extends Component {
   state = { search: "" };
@@ -20,6 +21,7 @@ class SubjectLayout extends Component {
           <Logo />
           <SearchBar searchNewString={this.searchNewString} className="w-64" />
           <CalButton />
+          <ActeaAd/>
           <SettingsButton />
           <ChatButton />
         </div>

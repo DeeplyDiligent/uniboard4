@@ -82,16 +82,18 @@ class Download {
               weekData.children.map(file => {
                 if (file && file.title === "File") {
                   fetch(file.link + "&redirect=1").then(function(response) {
-					let weekName = weekData.name.replace(/[^a-zA-Z0-9]/g, '_')
-					let filename = response.url.split("/").pop();
-					let unitNameDownload = unitName.replace(/[^a-zA-Z0-9]/g, '_')
-					console.log(`${unitName}/${weekData.name}/${filename}`)
+                    let weekName = weekData.name.replace(/[^a-zA-Z0-9]/g, '_')
+                    let cloudfrontFileName = response.url.match("(?<=filename%3D%22)(.*)(?=%22)")
+                    if(cloudfrontFileName) cloudfrontFileName = cloudfrontFileName[0]
+                    let filename = cloudfrontFileName || response.url.split("/").pop();
+                    let unitNameDownload = unitName.replace(/[^a-zA-Z0-9]/g, '_')
+                    console.log(`${unitName}/${weekData.name}/${filename}`)
                     chrome.downloads.download({
                       url: response.url,
-					  filename: `${unitNameDownload}/${weekName}/${filename}` ,
-					  conflictAction:"overwrite"
+                      filename: `${unitNameDownload}/${weekName}/${filename}` ,
+                      conflictAction:"overwrite"
                     });
-                  });
+                  })
                 }
               });
             }

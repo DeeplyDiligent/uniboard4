@@ -20,12 +20,13 @@ $(document).ready(function(){
             background:white" id="uniboard-max-button">Open App</div>`);
     }
     function startIframe(){
+        let updateHeaderPresent = $("#auth_outage_warningbar_box").length !== 0
         $('#page > *').hide();
         $("#page").append('<iframe id="pageaction" style="width:100%; border:none" height="100%" src="'+ chrome.extension.getURL('index.html')+'"></iframe>');
-        $('#page').css({position:'fixed'})
+        $('#page').css({position:'relative'})
         $('#page').removeClass('container-fluid');
         $('#page-footer').hide();
-        setInterval(function(){ $('#page').css({width:$('body').width(),height:$('body').height()-72}); }, 0);
+        setInterval(function(){ $('#page').css({width:$('body').width(),height:$('body').height()-(updateHeaderPresent?172:72)}); }, 0);
         showUniboardBasedOnSavedState();
         hideLoader();
     }

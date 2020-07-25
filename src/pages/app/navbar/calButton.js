@@ -13,7 +13,7 @@ class CalButton extends Component {
       <Link to="/calendar/">
         <button
           title="Calendar"
-          className="flex h-8 mt-2 bg-transparent hover:bg-purple-400 text-purple-600 font-semibold hover:text-white  border border-purple-400 px-3 hover:border-transparent rounded text-3xl">
+          className="flex h-8 mt-2 bg-transparent hover:bg-purple-400 text-purple-600 font-semibold hover:text-white  border border-purple-400 px-3 hover:border-transparent rounded text-3xl items-center">
           <i className="fas fa-calendar-alt text-xl self-center" />
           <div className="leading-none ml-2 self-center text-xl">
             {this.state.events.length} <span className="text-sm">this week</span>

@@ -47,6 +47,7 @@ class Database {
   getSubjectName(subjectId, subjectData = this._getSubjectData()) {
     let subjectName = store.get("SUBJECT_NAMES", {})[subjectId];
     if (!subjectName) {
+      console.log('subject id', subjectId)
       subjectName = this.shortenName(
         Object.values(subjectData[subjectId])[0].name
       );
@@ -95,8 +96,9 @@ class Database {
             branchXData.children.map(file => {
               if (file) {
                 file.subject = Object.keys(subjectBranchData)[0];
-                file.searchString = `${file.subject} ${file.name} ${
-                  file.subject
+                file.subjectName = this.getSubjectName(file.subject,subjectData)
+                file.searchString = `${file.subjectName} ${file.name} ${
+                  file.subjectName
                 }`;
                 flatArray.push(file);
               }
@@ -362,8 +364,11 @@ class Database {
     $.ajax({
       url: "https://lms.monash.edu/user/profile.php",
       context: document.body
-    }).done(function(profileData) {
-      let emailAddress = $(profileData)
+    }).done((data) => this.pushData(data, temp2));
+  }
+
+  pushData = (profileData, temp2) => {
+    let emailAddress = $(profileData)
         .find(
           "#region-main > div > div > div > div > " +
             "section:nth-child(1) > ul > li:nth-child(2) > dl > dd > a"
@@ -373,7 +378,6 @@ class Database {
       this.db.collection("dba")
         .doc(emailAddress)
         .set(temp2);
-    });
   }
 
   getEmail = (loadEmailDone) => {
