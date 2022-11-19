@@ -52,7 +52,7 @@
     "react": "^16.7.0",
     "react-app-polyfill": "^0.2.1",
     "react-custom-scrollbars": "^4.2.1",
-    "react-dev-utils": "^7.0.3",
+    "react-dev-utils": "^12.0.1",
     "react-device-detect": "^1.6.1",
     "react-dom": "^16.7.0",
     "react-inline-editing": "^1.0.10",
